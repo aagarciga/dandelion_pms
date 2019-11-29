@@ -1,6 +1,8 @@
 # Dandelion PMS
 Dandelion property management system (Symfony 5.0)
 
+> All your sensitive information or connections must be in a .env.local file ignored by git
+
 ## Coding rules (Use Test Driven Development)
 
 If you're organizing your code well, then all classes will fall into one of two types.   
@@ -26,4 +28,9 @@ but it doesn't hold much data, other than maybe some configuration.
 - Creating the test database:
 ```
     php bin/console doctrine:schema:create --env=test
+```
+
+- Installing Webpack Encore
+```
+    composer require encore
 ```
