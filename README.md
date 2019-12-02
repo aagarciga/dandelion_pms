@@ -30,7 +30,33 @@ but it doesn't hold much data, other than maybe some configuration.
     php bin/console doctrine:schema:create --env=test
 ```
 
+- Creating the new database structure:
+```
+    bin/console doctrine:schema:drop --force
+    bin/console doctrine:schema:create
+    bin/console doctrine:fixtures:load -n
+```
+- Start the background worker process
+```
+    bin/console messenger:consume -vv
+```
+
 - Installing Webpack Encore
 ```
     composer require encore
+```
+
+- Installing all frontend packages in node_modules
+```
+    yarn install
+```
+
+- Compiling assets with webpack
+```
+    yarn run encore dev --watch | yarn watch
+```
+
+- Adding jQuery
+```
+    yarn add jquery --dev
 ```
