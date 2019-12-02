@@ -24,6 +24,9 @@ Encore
      * and one CSS file (e.g. app.css) if your JavaScript imports CSS.
      */
     .addEntry('app', './assets/js/app.js')
+    .addEntry('site', './assets/js/site/main.js')
+    .addEntry('front-office', './assets/js/front-office/main.js')
+    .addEntry('back-office', './assets/js/back-office/main.js')
     //.addEntry('page1', './assets/js/page1.js')
     //.addEntry('page2', './assets/js/page2.js')
 
@@ -54,7 +57,12 @@ Encore
     })
 
     // enables Sass/SCSS support
-    //.enableSassLoader()
+    .enableSassLoader()
+
+    .copyFiles({
+        from: './assets/images',
+        to: 'images/[path][name].[hash:8].[ext]'
+    })
 
     // uncomment if you use TypeScript
     //.enableTypeScriptLoader()

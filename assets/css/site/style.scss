@@ -1,0 +1,10 @@
+@import "variables";
+
+@import './layout/header';
+@import './layout/footer';
+
+//@import './components/component1';
+
+body {
+    background-color: lightgray;
+}
