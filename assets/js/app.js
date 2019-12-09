@@ -6,10 +6,34 @@
  */
 
 // any CSS you require will output into a single css file (app.css in this case)
-require('../css/app.scss');
+// require('../css/app.scss');
+import '../css/app.scss';
 
-import $ from 'jquery';
+// import $ from 'jquery';
 
 console.log('Hello Webpack Encore! Edit me in assets/js/app.js');
+
+if(true){
+    // start loading animation
+    import('jquery').then(($) => {
+        // stop loading animation
+        console.log($.default.version);
+    });
+}
+
+// Alex: with regenerator-runtime:
+//
+// async function initializeAutocompleteFeature($autoComplete){
+//     const { default: autocomplete} =
+//         await import('.components/algolia-autocomplete');
+//     autocomplete($autoComplete, 'users', 'email');
+// }
+//
+// $(document).ready(function() {
+//     const $autoComplete = $('.js-user-autocomplete');
+//     if (!$autoComplete.is(':disabled')) {
+//         initializeAutocompleteFeature($autoComplete);
+//     }
+// });
 
 
