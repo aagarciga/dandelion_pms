@@ -6,10 +6,26 @@
  */
 
 // any CSS you require will output into a single css file (app.css in this case)
-require('../../css/site/style.scss');
+import '../../css/site/style.scss';
 
-import $ from 'jquery';
+// import gsap from 'gsap';
+// import scrollmagic from 'scrollmagic';
 
-console.log('Hello Webpack Encore! Edit me in assets/js/app.js');
+// import $ from 'jquery';
+
+
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+        navigator.serviceWorker.register('./sw.js', { scope: '/'}).then(function(registration) {
+            // Registration was successful
+            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        }, function(err) {
+            // registration failed :(
+            console.log('ServiceWorker registration failed: ', err);
+        });
+    });
+}
+
+
 
 

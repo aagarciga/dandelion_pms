@@ -60,3 +60,8 @@ but it doesn't hold much data, other than maybe some configuration.
 ```
     yarn add jquery --dev
 ```
+
+- Debugging the routes
+```
+    php bin/console debug:router
+```

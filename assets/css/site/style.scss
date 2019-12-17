@@ -1,4 +1,21 @@
+@import "~bootstrap/scss/bootstrap-reboot";
+//@import "~bootstrap/scss/bootstrap-grid";
+
 @import "variables";
+
+$theme-colors: (
+        "debug": $red,
+        "primary": $color-primary,
+        "secondary": $color-secondary,
+        "success": $color-success,
+        "info": $color-info,
+        "warning": $color-warning,
+        "danger": $color-danger,
+        "light": $color-light,
+        "dark": $color-dark,
+        "background": $color-background,
+        "foreground": $color-foreground
+);
 
 @import './layout/header';
 @import './layout/footer';
@@ -6,5 +23,114 @@
 //@import './components/component1';
 
 body {
-    background-color: lightgray;
+    background-color: map-get($theme-colors, "background");
+    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 12px;
+    color: map-get($theme-colors, "foreground");
+}
+
+h1, h2, h3, h4, h5, h6, h7{
+    font-family: 'Roboto Condensed', 'Roboto', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.square{
+    width: 50px;
+    height: 50px;
+    background-color: map-get($theme-colors, "danger");
+    display: inline-block;
+
+    &.primary{
+        background-color: map-get($theme-colors, 'primary');
+        &.lighten{
+            background-color: color-lighten(map-get($theme-colors, 'primary'));
+        }
+        &.darken{
+            background-color: color-darken(map-get($theme-colors, 'primary'));
+        }
+        &.complementary{
+            background-color: color-complement(map-get($theme-colors, 'primary'));
+        }
+        &.triad-1{
+            background-color: color-triad-1(map-get($theme-colors, 'primary'));
+        }
+        &.triad-2{
+            background-color: color-triad-2(map-get($theme-colors, 'primary'));
+        }
+    }
+
+    &.skobeloff{
+        background-color: $color-skobeloff;
+        &.lighten{
+            background-color: color-lighten($color-skobeloff);
+        }
+        &.darken{
+            background-color: color-darken($color-skobeloff);
+        }
+        &.complementary{
+            background-color: color-complement($color-skobeloff);
+        }
+        &.triad-1{
+            background-color: color-triad-1($color-skobeloff);
+        }
+        &.triad-2{
+            background-color: color-triad-2($color-skobeloff);
+        }
+    }
+
+    &.baby-powder{
+        background-color: $color-baby-powder;
+        &.lighten{
+            background-color: color-lighten($color-baby-powder);
+        }
+        &.darken{
+            background-color: color-darken($color-baby-powder);
+        }
+        &.complementary{
+            background-color: color-complement($color-baby-powder);
+        }
+        &.triad-1{
+            background-color: color-triad-1($color-baby-powder);
+        }
+        &.triad-2{
+            background-color: color-triad-2($color-baby-powder);
+        }
+    }
+
+    &.rich-black{
+        background-color: $color-rich-black;
+        &.lighten{
+            background-color: color-lighten($color-rich-black);
+        }
+        &.darken{
+            background-color: color-darken($color-rich-black);
+        }
+        &.complementary{
+            background-color: color-complement($color-rich-black);
+        }
+        &.triad-1{
+            background-color: color-triad-1($color-rich-black);
+        }
+        &.triad-2{
+            background-color: color-triad-2($color-rich-black);
+        }
+}
+
+&.dark-pastel-red{
+    background-color: $color-dark-pastel-red;
+    &.lighten{
+        background-color: color-lighten($color-dark-pastel-red);
+    }
+    &.darken{
+        background-color: color-darken($color-dark-pastel-red);
+    }
+    &.complementary{
+        background-color: color-complement($color-dark-pastel-red);
+    }
+    &.triad-1{
+        background-color: color-triad-1($color-dark-pastel-red);
+    }
+    &.triad-2{
+        background-color: color-triad-2($color-dark-pastel-red);
+    }
+}
 }

@@ -1,1 +1,43 @@
-//define colors here
+@import "colors";
+
+$light-theme: true !default;
+$dark-theme: false !default;
+
+$theme-use-primary-color: true !default;
+$theme-use-secondary-color: true !default;
+$theme-use-background-color: true !default;
+$theme-use-foreground-color: true !default;
+$theme-use-accent-light-color: true !default;
+$theme-use-accent-dark-color: true !default;
+
+$color-primary:         #007bff !default;
+$color-secondary:       #6c757d !default;
+$color-background:      #FBFEF9 !default;
+$color-foreground:      #040303 !default;
+$color-accent-light:    #AAC6A8 !default;
+$color-accent-dark:     #4B4747 !default;
+$color-success:         #28a745 !default;
+$color-info:            #17a2b8 !default;
+$color-warning:         #ffc107 !default;
+$color-danger:          #dc3545 !default;
+$color-light:           #f8f9fa !default;
+$color-dark:            #343a40 !default;
+//
+//@if $dark-theme {
+//  $color-primary: darken($color-primary, 60%);
+//  $accent-color: lighten($color-accent-light, 60%);
+//}
+
+$color-skobeloff: #197278;
+$color-baby-powder: #FBFEF9;
+$color-rich-black: #040303;
+$color-cambridge-blue: #AAC6A8;
+$color-quartz: #4B4747;
+$color-dark-pastel-red: #C03221;
+
+//$color-primary: #197278;      // HSL: 184° 66% 28%
+//$color-background: #FBFEF9;    // HSL: 96° 71% 99%
+//$color-foreground: #040303;    // HSL: 0° 14% 1%
+//$color-accent-light: #AAC6A8;   // HSL: 116° 21% 72%
+//$color-accent-dark: #4B4747;     // HSL: 0° 3% 29%
+//$color-danger: #C03221;        // HSL: 6° 71% 44%

@@ -11,13 +11,13 @@ import '../css/app.scss';
 
 // import $ from 'jquery';
 
-console.log('Hello Webpack Encore! Edit me in assets/js/app.js');
+// console.log('Hello Webpack Encore! Edit me in assets/js/app.js');
 
 if(true){
     // start loading animation
     import('jquery').then(($) => {
         // stop loading animation
-        console.log($.default.version);
+        console.log('Async jQuery module importation for version:',$.fn.jquery);
     });
 }
 
