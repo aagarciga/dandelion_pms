@@ -25,7 +25,7 @@ $theme-colors: (
 body {
     background-color: map-get($theme-colors, "background");
     font-family: 'Roboto', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    font-size: 12px;
+    font-size: $font-size-base;
     color: map-get($theme-colors, "foreground");
 }
 
@@ -134,3 +134,36 @@ h1, h2, h3, h4, h5, h6, h7{
     }
 }
 }
+
+//.container{
+//    display: grid;
+//    grid-template-columns: 1fr 1fr 1fr;
+//    grid-template-rows: 1fr 1fr 1fr;
+//
+//    > h1{
+//        grid-column: 1/3 ;
+//        grid-row: 2;
+//    }
+//
+//    > nav {
+//        grid-column: 3;
+//        grid-row: 1;
+//        justify-self: end;
+//    }
+//}
+
+section.container{
+    overflow: hidden;
+}
+
+.page-transition-top-wipe{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    //background-color: map-get($theme-colors, 'background');
+    background-color: map-get($theme-colors, 'primary');
+    z-index: 1;
+    top: -100%;
+}
+
+

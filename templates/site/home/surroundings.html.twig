@@ -1,0 +1,18 @@
+{% extends 'site.html.twig' %}
+
+
+{% block body %}
+
+<main data-barba="wrapper">
+    <div class="page-transition-top-wipe"></div>
+
+        <section class="container" data-barba="container" data-barba-namespace="surroundings">
+            <h1>
+            <a href="{{ url('site-home') }}">
+                {% include '/site/home/_back-btn.twig' %}
+            </a> Surroundings</h1>
+
+            {% include 'site/home/_debug-content.html.twig' %}
+        </section>
+</main>
+{% endblock %}
