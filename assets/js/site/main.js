@@ -13,6 +13,8 @@ import gsap from "gsap";
 import barba from "@barba/core";
 import documentReady from "./core/documentReady";
 import keyboardNavigation from "./core/keyboardNavigation";
+import PageTransitionOverlay from "./core/pageTransitionOverlays";
+
 
 // import scrollmagic from 'scrollmagic';
 // import $ from 'jquery';
@@ -22,7 +24,8 @@ class SiteApp {
     static htmlBindings() {
         return {
             pageTransitionAnimationClass: "page-transition__animating",
-            pageTransitionFinishedClass: "page-transition__finished"
+            pageTransitionFinishedClass: "page-transition__finished",
+            pageOverlayShapeSelector: ".shape-overlays"
         };
     }
 
@@ -39,6 +42,9 @@ class SiteApp {
         if (this.debug) {
             window.console.info("Site Application:constructor");
         }
+        const overlayElement = window.document.querySelector(SiteApp.htmlBindings().pageOverlayShapeSelector);
+        this.overlay = new PageTransitionOverlay(overlayElement);
+        // this.overlay.open();
         this.init();
     }
 
@@ -89,33 +95,40 @@ class SiteApp {
                         window.console.info("Site Application:page:transition:leave:", data);
                     }
 
-                    let done = this.async();
+                    function done(context) {
+                        return context.async();
+                    }
+
                     let tl = gsap.timeline();
 
                     tl
                         .addLabel("start")
-                        .to(".page-transition-top-wipe", {
-                            duration: 1,
-                            y: "100%",
-                            // ease: 'power2.in',
-                            onComplete: done
-                        }, "start")
+                        // .to(".page-transition-top-wipe", {
+                        //     duration: 1,
+                        //     y: "100%",
+                        //     // ease: 'power2.in',
+                        //     onComplete: done
+                        // }, "start")
                         .set(data.current.container, {
                             height: 0
                         });
+                    self.overlay.open(done(this));
                 },
                 enter: function (data) {
                     if (debug) {
                         window.console.info("Site Application:page:transition:enter:", data);
                     }
-                    let done = this.async();
-
-                    gsap.to(".page-transition-top-wipe", {
-                        duration: 1,
-                        y: "-100%",
-                        // ease: 'power2.out',
-                        onComplete: done
-                    });
+                    function done(context) {
+                        return context.async();
+                    }
+                    //
+                    // gsap.to(".page-transition-top-wipe", {
+                    //     duration: 1,
+                    //     y: "-100%",
+                    //     // ease: 'power2.out',
+                    //     onComplete: done
+                    // });
+                    self.overlay.close(done(this));
                     self.pageInit();
                 }
             }]
@@ -126,5 +139,3 @@ class SiteApp {
 documentReady(() => {
     SiteApp.start(true);
 }, window);
-
-

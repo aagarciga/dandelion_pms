@@ -4,8 +4,8 @@
 {% block body %}
 
 <main data-barba="wrapper">
-    <div class="page-transition-top-wipe"></div>
-
+{#    <div class="page-transition-top-wipe"></div>#}
+    {% include 'site/home/_page-transition-overlay.svg.twig' %}
         <section class="container" data-barba="container" data-barba-namespace="surroundings">
             <h1>
             <a href="{{ url('site-home') }}">
