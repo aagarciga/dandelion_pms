@@ -12,6 +12,13 @@
                     {% include '/site/home/_back-btn.twig' %}
                 </a> Rooms</h1>
 
+            <nav class="main-nav">
+                <a href="{{ url('site-home') }}" data-transition="true">Home</a>
+                <a href="{{ url('site-rooms') }}" data-transition="true" class="current-page">Rooms</a>
+                <a href="{{ url('site-gallery') }}" data-transition="true">Gallery</a>
+                <a href="{{ url('site-surroundings') }}" data-transition="true">Surroundings</a>
+            </nav>
+
             {% include 'site/home/_debug-content.html.twig' %}
         </section>
 </main>

@@ -3,6 +3,10 @@ export default function documentReady(callback, context){
         throw new TypeError("callback for docReady(fn) must be a function");
     }
 
+    let readyList = [];
+    let readyFired = false;
+    let readyEventHandlersInstalled = false;
+
     // call this when the document is ready
     // this function protects itself against being called more than once
     function ready() {
@@ -28,9 +32,7 @@ export default function documentReady(callback, context){
         }
     }
 
-    let readyList = [];
-    let readyFired = false;
-    let readyEventHandlersInstalled = false;
+
 
     // if ready has already fired, then just schedule the callback
     // to fire asynchronously, but right away

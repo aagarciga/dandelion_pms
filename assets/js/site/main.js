@@ -12,6 +12,7 @@ import "../../css/site/style.scss";
 import gsap from "gsap";
 import barba from "@barba/core";
 import documentReady from "./core/documentReady";
+import keyboardNavigation from "./core/keyboardNavigation";
 
 // import scrollmagic from 'scrollmagic';
 // import $ from 'jquery';
@@ -48,6 +49,7 @@ class SiteApp {
             try {
                 this.barbaHooks();
                 this.barbaInit(this.debug);
+                this.pageInit();
             } catch (error) {
                 if (this.debug) {
                     window.console.error("Site Application:init:", error);
@@ -56,6 +58,10 @@ class SiteApp {
             }
         }
         SiteApp.pageTransitionFinished();
+    }
+
+    pageInit() {
+        keyboardNavigation(".main-nav > a", window, this.debug);
     }
 
     barbaHooks(debug = false) {
@@ -74,6 +80,7 @@ class SiteApp {
         if (debug) {
             window.console.info("Site Application:barbaInit");
         }
+        let self = this;
         barba.init({
             transitions: [{
                 name: "page-transition",
@@ -109,6 +116,7 @@ class SiteApp {
                         // ease: 'power2.out',
                         onComplete: done
                     });
+                    self.pageInit();
                 }
             }]
         });
