@@ -65,3 +65,8 @@ but it doesn't hold much data, other than maybe some configuration.
 ```
     php bin/console debug:router
 ```
+
+- Update translation files
+```
+     php bin/console translation:update --force en
+```

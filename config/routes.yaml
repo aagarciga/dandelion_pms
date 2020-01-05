@@ -1,3 +1,7 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+site-home:
+  path: /{_locale}
+  controller: App\Controller\Site\HomeController::index
+  requirements:
+    _locale: '%app_locales%'
+  defaults:
+    _locale: '%locale%'

@@ -1,3 +1,10 @@
 controllers:
     resource: ../../src/Controller/
     type: annotation
+    prefix:
+        de: '/de'
+        en: ''
+        es: '/es'
+        fr: '/fr'
+        nl: '/nl'
+        pt_BR: '/pt_BR'

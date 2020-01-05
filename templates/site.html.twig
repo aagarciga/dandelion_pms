@@ -13,8 +13,7 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
 
     <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed&display=swap" rel="stylesheet">
 {% endblock %}
-{% block title %}Welcome! | Site{% endblock %}
-
+{% block title %}{{ 'site.name' | trans }}{% endblock %}
 
 {% block stylesheets %}
     {{ parent() }}

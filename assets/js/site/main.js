@@ -8,12 +8,15 @@
 // any CSS you require will output into a single css file (app.css in this case)
 // noinspection JSLint
 import "../../css/site/style.scss";
+import "tiny-slider/src/tiny-slider.scss";
 
 import gsap from "gsap";
 import barba from "@barba/core";
 import documentReady from "./core/documentReady";
 import keyboardNavigation from "./core/keyboardNavigation";
-import PageTransitionOverlay from "./core/pageTransitionOverlays";
+
+import {tns} from 'tiny-slider/src/tiny-slider';
+// import PageTransitionOverlay from "./core/pageTransitionOverlays";
 
 
 // import scrollmagic from 'scrollmagic';
@@ -42,8 +45,8 @@ class SiteApp {
         if (this.debug) {
             window.console.info("Site Application:constructor");
         }
-        const overlayElement = window.document.querySelector(SiteApp.htmlBindings().pageOverlayShapeSelector);
-        this.overlay = new PageTransitionOverlay(overlayElement);
+        // const overlayElement = window.document.querySelector(SiteApp.htmlBindings().pageOverlayShapeSelector);
+        // this.overlay = new PageTransitionOverlay(overlayElement);
         // this.overlay.open();
         this.init();
     }
@@ -53,8 +56,8 @@ class SiteApp {
             window.console.info("Site Application:init");
 
             try {
-                this.barbaHooks();
-                this.barbaInit(this.debug);
+                // this.barbaHooks();
+                // this.barbaInit(this.debug);
                 this.pageInit();
             } catch (error) {
                 if (this.debug) {
@@ -64,6 +67,28 @@ class SiteApp {
             }
         }
         SiteApp.pageTransitionFinished();
+
+        // Alex: TODO
+        // let slider = tns({
+        //         container: '.my-slider',
+        //         items: 3,
+        //         slideBy: 'page',
+        //         autoplay: true
+        //     }
+        // );
+
+        let slider = tns({
+            container: '.slider',
+            // autoplay: true,
+            mode: 'gallery',
+            controls: true,
+            controlsContainer: '.controls-container',
+            nav: false,
+            autoplayButton: false,
+            autoplayPosition: 'bottom',
+            autoplayButtonOutput: false
+        });
+        slider.play();
     }
 
     pageInit() {
@@ -103,16 +128,16 @@ class SiteApp {
 
                     tl
                         .addLabel("start")
-                        // .to(".page-transition-top-wipe", {
-                        //     duration: 1,
-                        //     y: "100%",
-                        //     // ease: 'power2.in',
-                        //     onComplete: done
-                        // }, "start")
+                        .to(".page-transition-top-wipe", {
+                            duration: 1,
+                            y: "100%",
+                            // ease: 'power2.in',
+                            onComplete: done
+                        }, "start")
                         .set(data.current.container, {
                             height: 0
                         });
-                    self.overlay.open(done(this));
+                    // self.overlay.open(done(this));
                 },
                 enter: function (data) {
                     if (debug) {
@@ -121,14 +146,14 @@ class SiteApp {
                     function done(context) {
                         return context.async();
                     }
-                    //
-                    // gsap.to(".page-transition-top-wipe", {
-                    //     duration: 1,
-                    //     y: "-100%",
-                    //     // ease: 'power2.out',
-                    //     onComplete: done
-                    // });
-                    self.overlay.close(done(this));
+
+                    gsap.to(".page-transition-top-wipe", {
+                        duration: 1,
+                        y: "-100%",
+                        // ease: 'power2.out',
+                        onComplete: done
+                    });
+                    // self.overlay.close(done(this));
                     self.pageInit();
                 }
             }]

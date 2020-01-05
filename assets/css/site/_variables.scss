@@ -41,3 +41,20 @@ $color-dark-pastel-red: #C03221;
 //$color-accent-light: #AAC6A8;   // HSL: 116° 21% 72%
 //$color-accent-dark: #4B4747;     // HSL: 0° 3% 29%
 //$color-danger: #C03221;        // HSL: 6° 71% 44%
+
+$theme-colors: (
+        "primary": $color-primary,
+        "secondary": $color-secondary,
+        "success": $color-success,
+        "info": $color-info,
+        "warning": $color-warning,
+        "danger": $color-danger,
+        "light": $color-light,
+        "dark": $color-dark,
+        "background": $color-background,
+        "foreground": $color-foreground
+);
+
+$left-margin: 72px;
+$margin-left: 72px;
+$margin-button: 20px;

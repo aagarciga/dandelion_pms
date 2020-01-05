@@ -4,12 +4,13 @@
 {% block body %}
 
 <main data-barba="wrapper">
-{#    <div class="page-transition-top-wipe"></div>#}
-    {% include 'site/home/_page-transition-overlay.svg.twig' %}
+    <aside>
+        <nav role="navigation"></nav>
+    </aside>
         <section class="container" data-barba="container" data-barba-namespace="gallery">
             <h1>
             <a href="{{ url('site-home') }}">
-                {% include '/site/home/_back-btn.twig' %}
+                {% include '/site/_back-btn.twig' %}
             </a> Gallery</h1>
 
             <nav class="main-nav">
@@ -19,7 +20,7 @@
                 <a href="{{ url('site-surroundings') }}" data-transition="true">Surroundings</a>
             </nav>
 
-            {% include 'site/home/_debug-content.html.twig' %}
+            {% include 'site/_debug-content.html.twig' %}
         </section>
 </main>
 {% endblock %}

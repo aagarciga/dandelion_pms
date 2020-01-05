@@ -18,24 +18,24 @@ class HomeController extends AbstractController
     }
 
     /**
-     * @Route("/rooms", name="site-rooms")
-     */
-    public function rooms(){
-        return $this->render('site/home/rooms.html.twig');
-    }
-
-    /**
      * @Route("/gallery", name="site-gallery")
      */
     public function gallery(){
-        return $this->render('site/home/gallery.html.twig');
+        return $this->render('site/gallery/gallery.html.twig');
     }
 
     /**
      * @Route("/surroundings", name="site-surroundings")
      */
     public function surroundings(){
-        return $this->render('site/home/surroundings.html.twig');
+        return $this->render('site/surroundings/surroundings.html.twig');
+    }
+
+    /**
+     * @Route("/getintouch", name="site-contact-us")
+     */
+    public function contactUs(){
+        return $this->render('site/contact-us/contact-us.html.twig');
     }
 
 

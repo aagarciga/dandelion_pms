@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="en" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="FvFix0_" resname="response.email.response_time">
+        <source>response.email.response_time</source>
+        <target>{response_time, plural, =0 {We've got your email and we're looking into this. If we can't provide a full answer today, we'll email you to keep you updated.} one {We've got your email and we're looking into this. If we can't provide a full answer in one working day, we'll email you to keep you updated.} other {We've got your email and we're looking into this. If we can't provide a full answer in # working days, we'll email you to keep you updated.}}</target>
+      </trans-unit>
+      <trans-unit id="duNkZBV" resname="response.request.response_time">
+        <source>response.request.response_time</source>
+        <target>{response_time, plural, =0 {We've got your request and we're looking into this. If we can't provide a full answer today, we'll email you to keep you updated.} one {We've got your request and we're looking into this. If we can't provide a full answer in one working day, we'll email you to keep you updated.} other {We've got your request and we're looking into this. If we can't provide a full answer in # working days, we'll email you to keep you updated.}}</target>
+      </trans-unit>
+      <trans-unit id="lHE5k08" resname="page.name.news">
+        <source>page.name.news</source>
+        <target>news</target>
+      </trans-unit>
+      <trans-unit id="fnVlM1." resname="page.name.surroundings">
+        <source>page.name.surroundings</source>
+        <target>surroundings</target>
+      </trans-unit>
+      <trans-unit id="oAeUR3w" resname="page.name.gallery">
+        <source>page.name.gallery</source>
+        <target>gallery</target>
+      </trans-unit>
+      <trans-unit id="_oww36i" resname="page.name.contact-us">
+        <source>page.name.contact-us</source>
+        <target>get in touch</target>
+      </trans-unit>
+      <trans-unit id="N1n7QHj" resname="site.description">
+        <source>site.description</source>
+        <target>A lovely hotel in central Paramaribo, named after the neighborhood it's located in, 'Maretraite'.</target>
+      </trans-unit>
+      <trans-unit id="dffZERE" resname="site.name">
+        <source>site.name</source>
+        <target>Maretraite Hotel</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -30,6 +30,11 @@ Encore
     //.addEntry('page1', './assets/js/page1.js')
     //.addEntry('page2', './assets/js/page2.js')
     // .addStyleEntry('page1', './assets/css/page1.js')
+    .addStyleEntry('homepage', './assets/css/site/pages/homepage.scss')
+    .addStyleEntry('contact-us', './assets/css/site/pages/contact-us.scss')
+    .addStyleEntry('gallery', './assets/css/site/pages/gallery.scss')
+    .addStyleEntry('news', './assets/css/site/pages/news.scss')
+    .addStyleEntry('surroundings', './assets/css/site/pages/surroundings.scss')
 
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
     .splitEntryChunks()

@@ -1,25 +1,67 @@
 {% extends 'site.html.twig' %}
 
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('homepage') }}
+{% endblock %}
 
 {% block body %}
 
     <main data-barba="wrapper">
-        {#    <div class="page-transition-top-wipe"></div>#}
-        {% include 'site/home/_page-transition-overlay.svg.twig' %}
-
-        <section class="container" data-barba="container" data-barba-namespace="home">
-            <h1>Homepage</h1>
-
-            <nav class="main-nav">
-                <a href="{{ url('site-home') }}" data-transition="true" class="current-page">Home</a>
-                <a href="{{ url('site-rooms') }}" data-transition="true">Rooms</a>
-                <a href="{{ url('site-gallery') }}" data-transition="true">Gallery</a>
-                <a href="{{ url('site-surroundings') }}" data-transition="true">Surroundings</a>
+        <aside>
+            <button type="button" id="locale-selector">
+                {% include 'site/svg/_iconmonstr-globe-8.svg.twig' %}
+            </button>
+            <nav role="navigation" id="locale-list">
+            {% for locale in locales() %}
+                <a {% if app.request.locale == locale.code %}class="active" aria-checked="true" {% else %}class="" aria-checked="false"{% endif %} role="menuitem"  href="{{ path(app.request.get('_route', 'home_index'), app.request.get('_route_params', [])|merge({_locale: locale.code})) }}">
+                    {{ locale.name|capitalize }} <small>{{ locale.code[0:2] }}</small>
+                </a>
+            {% endfor %}
             </nav>
+        </aside>
 
-            {% include 'site/home/_debug-content.html.twig' %}
+        <section class="homepage container" data-barba="container" data-barba-namespace="home">
+            <header>
 
 
+                <nav class="main-nav" role="navigation">
+                    <a href="#" data-transition="true">{{ "page.name.news" | trans | capitalize }}</a>
+                    <a href="{{ url('site-surroundings') }}" data-transition="true">{{ "page.name.surroundings" | trans | capitalize }}</a>
+                    <a href="{{ url('site-gallery') }}" data-transition="true">{{ "page.name.gallery" | trans | capitalize }}</a>
+                    <a href="{{ url('site-contact-us') }}" data-transition="true">{{ "page.name.contact-us" | trans | capitalize }}</a>
+                </nav>
+            </header>
+
+            <div class="branding-left"></div>
+            <div class="branding-right">
+                <h1><span>Maretraite</span> <span>Hotel</span></h1>
+            </div>
+
+            <div class="content">
+
+                <div class="slider">
+                    <div>{% include 'site/_debug-content.html.twig' %}</div>
+                    <div><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, aperiam assumenda beatae commodi consequuntur distinctio et excepturi explicabo ipsa magni maiores neque pariatur recusandae reiciendis reprehenderit rerum voluptate. Necessitatibus, neque?</p></div>
+                    <div><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam architecto at consequatur, dignissimos dolore doloribus earum exercitationem illo iste iure labore laboriosam maxime molestias optio sed vel, veritatis. Dignissimos, sit!</p></div>
+                </div>
+{#                    {% include 'site/_debug-content.html.twig' %}#}
+
+            </div>
+
+            <footer>
+{#                <summary>#}
+{#                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aspernatur autem magnam pariatur, rem sunt veritatis? Dicta expedita impedit quos rem tempora. Beatae delectus dolorem illum ipsam quae. Eaque, tempore.#}
+{#                </summary>#}
+{#                <details>#}
+{#                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque debitis ea eos expedita, ipsum magnam odio tenetur? Delectus, eligendi fugiat fugit magnam maxime neque nobis odio provident quibusdam rerum unde!</p>#}
+{#                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis consequatur cupiditate distinctio dolor illum, incidunt iure labore molestias neque nihil, nisi numquam provident, quam quisquam quod recusandae sequi sit totam.</p>#}
+{#                </details>#}
+                <div class="controls-container">
+                    <button>previous</button>
+                    <button>next</button>
+                </div>
+            </footer>
         </section>
     </main>
 

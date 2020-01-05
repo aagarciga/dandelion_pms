@@ -1,0 +1,44 @@
+@import "../variables";
+
+nav#locale-list{
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  width: 200px;
+  left: $margin-left + 3px;
+  bottom: $margin-button;
+  background: map-get($theme-colors, 'background');
+
+  border-radius: 5px;
+  box-shadow: 0 0 3px rgba(100, 100, 100, 0.5);
+
+  padding: 1em;
+
+  a{
+    display: block;
+    color: map-get($theme-colors, 'primary');
+    transition: color ease-out .2s;
+
+    &.active{
+      color: map-get($theme-colors, 'secondary');
+    }
+
+    &:link{
+      text-decoration: none;
+    }
+    &:hover{
+      color: map-get($theme-colors, 'foreground');
+    }
+    &:active,
+    &:focus{
+      outline: none;
+    }
+
+    > small{
+      float: left;
+      margin-top: 3px;
+      margin-right: 1em;
+      text-transform: uppercase;
+    }
+  }
+}

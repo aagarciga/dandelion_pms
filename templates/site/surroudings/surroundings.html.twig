@@ -1,0 +1,26 @@
+{% extends 'site.html.twig' %}
+
+
+{% block body %}
+
+<main data-barba="wrapper">
+    <aside>
+        <nav role="navigation"></nav>
+    </aside>
+    <section class="container" data-barba="container" data-barba-namespace="surroundings">
+        <h1>
+        <a href="{{ url('site-home') }}">
+            {% include '/site/_back-btn.twig' %}
+        </a> Surroundings</h1>
+
+        <nav class="main-nav">
+            <a href="{{ url('site-home') }}" data-transition="true">Home</a>
+            <a href="{{ url('site-rooms') }}" data-transition="true">Rooms</a>
+            <a href="{{ url('site-gallery') }}" data-transition="true">Gallery</a>
+            <a href="{{ url('site-surroundings') }}" data-transition="true" class="current-page">Surroundings</a>
+        </nav>
+
+        {% include 'site/_debug-content.html.twig' %}
+    </section>
+</main>
+{% endblock %}

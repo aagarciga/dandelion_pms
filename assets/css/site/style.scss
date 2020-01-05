@@ -3,22 +3,7 @@
 
 @import "variables";
 
-$theme-colors: (
-        "debug": $red,
-        "primary": $color-primary,
-        "secondary": $color-secondary,
-        "success": $color-success,
-        "info": $color-info,
-        "warning": $color-warning,
-        "danger": $color-danger,
-        "light": $color-light,
-        "dark": $color-dark,
-        "background": $color-background,
-        "foreground": $color-foreground
-);
 
-@import './layout/header';
-@import './layout/footer';
 
 //@import './components/component1';
 
@@ -113,80 +98,59 @@ h1, h2, h3, h4, h5, h6, h7{
         &.triad-2{
             background-color: color-triad-2($color-rich-black);
         }
-}
-
-&.dark-pastel-red{
-    background-color: $color-dark-pastel-red;
-    &.lighten{
-        background-color: color-lighten($color-dark-pastel-red);
     }
-    &.darken{
-        background-color: color-darken($color-dark-pastel-red);
+
+    &.dark-pastel-red{
+        background-color: $color-dark-pastel-red;
+        &.lighten{
+            background-color: color-lighten($color-dark-pastel-red);
+        }
+        &.darken{
+            background-color: color-darken($color-dark-pastel-red);
+        }
+        &.complementary{
+            background-color: color-complement($color-dark-pastel-red);
+        }
+        &.triad-1{
+            background-color: color-triad-1($color-dark-pastel-red);
+        }
+        &.triad-2{
+            background-color: color-triad-2($color-dark-pastel-red);
+        }
     }
-    &.complementary{
-        background-color: color-complement($color-dark-pastel-red);
+}
+
+
+
+@media only screen and (min-width: 768px) {
+
+
+    html{
+        height: 100vh;
     }
-    &.triad-1{
-        background-color: color-triad-1($color-dark-pastel-red);
+    body{
+        height: 100vh;
+
+        > main{
+
+            > aside{
+                display: block;
+                position: fixed;
+                top: 0;
+                height: 100vh;
+                width: $left-margin;
+                background-color: map-get($theme-colors, 'primary');
+
+                @import "components/locale-selector";
+                @import "components/locale-list";
+            }
+
+            > section{
+                margin-left: $left-margin;
+
+            }
+        }
     }
-    &.triad-2{
-        background-color: color-triad-2($color-dark-pastel-red);
-    }
-}
-}
 
-//.container{
-//    display: grid;
-//    grid-template-columns: 1fr 1fr 1fr;
-//    grid-template-rows: 1fr 1fr 1fr;
-//
-//    > h1{
-//        grid-column: 1/3 ;
-//        grid-row: 2;
-//    }
-//
-//    > nav {
-//        grid-column: 3;
-//        grid-row: 1;
-//        justify-self: end;
-//    }
-//}
 
-section.container{
-    overflow: hidden;
-}
-
-.page-transition-top-wipe{
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    //background-color: map-get($theme-colors, 'background');
-    background-color: map-get($theme-colors, 'primary');
-    z-index: 1;
-    top: -100%;
-}
-
-.shape-overlays {
-    width: 100vw;
-    height: 100vh;
-    pointer-events: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-}
-
-.shape-overlays.is-opened {
-    pointer-events: auto;
-}
-
-.shape-overlays__path:nth-of-type(1) {
-    fill: #000000;
-}
-
-.shape-overlays__path:nth-of-type(2) {
-    fill: #1d1d1f;
-}
-
-.shape-overlays__path:nth-of-type(3) {
-    fill: map-get($theme-colors, 'primary');
 }
