@@ -29,6 +29,9 @@ $color-dark:            #343a40 !default;
 //}
 
 $color-skobeloff: #197278;
+$color-scobeloff-darken-1: darken(#197278, 1%);
+$color-scobeloff-darken-5: darken(#197278, 5%);
+$color-scobeloff-darken-10: darken(#197278, 10%);
 $color-baby-powder: #FBFEF9;
 $color-rich-black: #040303;
 $color-cambridge-blue: #AAC6A8;
@@ -43,8 +46,13 @@ $color-dark-pastel-red: #C03221;
 //$color-danger: #C03221;        // HSL: 6° 71% 44%
 
 $theme-colors: (
-        "primary": $color-primary,
-        "secondary": $color-secondary,
+        //"primary": $color-primary,
+        "primary": $color-skobeloff,
+        "primary-darken-1" : $color-scobeloff-darken-1,
+        "primary-darken-5" : $color-scobeloff-darken-5,
+        "primary-darken-10" : $color-scobeloff-darken-10,
+        //"secondary": $color-secondary,
+        "secondary": $color-dark-pastel-red,
         "success": $color-success,
         "info": $color-info,
         "warning": $color-warning,
@@ -57,4 +65,4 @@ $theme-colors: (
 
 $left-margin: 72px;
 $margin-left: 72px;
-$margin-button: 20px;
+$margin-button: 27px;

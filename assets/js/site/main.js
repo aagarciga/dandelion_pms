@@ -88,7 +88,7 @@ class SiteApp {
             autoplayPosition: 'bottom',
             autoplayButtonOutput: false
         });
-        slider.play();
+        // slider.play();
     }
 
     pageInit() {

@@ -19,7 +19,21 @@
                 </a>
             {% endfor %}
             </nav>
+
+            <nav role="navigation" id="socials">
+                <a href="https://www.facebook.com/hotelmaretraite/">
+                    {% include 'site/svg/_iconmonstr-facebook-6.svg.twig' %}
+                </a>
+                <a href="https://wa.me/5977614288">
+                    {% include 'site/svg/_iconmonstr-whatsapp-1.svg.twig' %}
+                </a>
+                <a href="https://www.instagram.com/maretraitehotel/">
+                    {% include 'site/svg/_iconmonstr-instagram-11.svg.twig' %}
+                </a>
+            </nav>
         </aside>
+
+
 
         <section class="homepage container" data-barba="container" data-barba-namespace="home">
             <header>
@@ -31,19 +45,33 @@
                     <a href="{{ url('site-gallery') }}" data-transition="true">{{ "page.name.gallery" | trans | capitalize }}</a>
                     <a href="{{ url('site-contact-us') }}" data-transition="true">{{ "page.name.contact-us" | trans | capitalize }}</a>
                 </nav>
+
+                <button type="button" id="user-menu-selector">
+                    {% include 'site/svg/_burger-menu.svg.twig' %}
+                </button>
             </header>
 
-            <div class="branding-left"></div>
+            <div class="branding-left">
+                <div class="svg-container">
+                    {% include 'site/svg/_maretraite-vertical.svg.twig' %}
+                </div>
+
+            </div>
             <div class="branding-right">
                 <h1><span>Maretraite</span> <span>Hotel</span></h1>
+                <p class="copyright">&copy; {{ "now" | date('Y') }} {{ 'site.name'|trans }}</p>
             </div>
 
             <div class="content">
 
                 <div class="slider">
+                    <div>
+                        <img src="{{ asset('build/images/standard-double-room.jpg') }}" alt="">
+                    </div>
+                    <div>
+                        
+                    </div>
                     <div>{% include 'site/_debug-content.html.twig' %}</div>
-                    <div><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, aperiam assumenda beatae commodi consequuntur distinctio et excepturi explicabo ipsa magni maiores neque pariatur recusandae reiciendis reprehenderit rerum voluptate. Necessitatibus, neque?</p></div>
-                    <div><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam architecto at consequatur, dignissimos dolore doloribus earum exercitationem illo iste iure labore laboriosam maxime molestias optio sed vel, veritatis. Dignissimos, sit!</p></div>
                 </div>
 {#                    {% include 'site/_debug-content.html.twig' %}#}
 

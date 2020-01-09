@@ -1,0 +1,13 @@
+@import "variables";
+
+
+@mixin micro-transition(){
+  transition: all ease-in .2s;
+}
+
+@mixin focused(){
+  border-radius: 4px;
+  background-color: map-get($theme-colors, 'primary-darken-1');
+  box-shadow: inset 0 0 5px map-get($theme-colors, 'primary-darken-5');
+  outline: none;
+}
