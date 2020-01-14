@@ -109,75 +109,73 @@ body{
           background-color: map-get($theme-colors, 'primary');
           color: map-get($theme-colors, 'background');
 
-          nav{
+          section.primary{
+            nav{
 
-            margin: 45px 0 0 94px;
+              margin: 45px 0 0 94px;
 
-            a{
-              @include micro-transition();
-              color: map-get($theme-colors, 'background');
-              margin-left: 32px;
-              padding: 10px 10px;
-              &:first-of-type{
-                margin-left: 0;
+              a{
+                @include micro-transition();
+                color: map-get($theme-colors, 'background');
+                margin-left: 32px;
+                padding: 10px 10px;
+                &:first-of-type{
+                  margin-left: 0;
+                }
+                transition: all ease-in .2s;
+                &:hover{
+                  text-decoration: none;
+                  color: map-get($theme-colors, 'dark');
+                }
+                &:focus,
+                &:active{
+                  @include focused();
+                }
               }
+            }
+          }
+
+          section.secondary{
+            border-left: 1px solid map-get($theme-colors, 'primary-darken-5');
+            float: right;
+
+
+            button#user-menu-selector{
+
+              background-color: transparent;
+              padding: 0 10px;
+              border: none;
+
+              width: 50px;
+              height: 50px;
               transition: all ease-in .2s;
-              &:hover{
-                text-decoration: none;
-                color: map-get($theme-colors, 'dark');
+
+              //background-color: map-get($theme-colors, 'primary-darken');
+
+              > svg{
+                @include micro-transition();
+                stroke: map-get($theme-colors, 'background');
+                fill: map-get($theme-colors, 'background');
+                stroke-width: 2px;
+
+                width: 100%;
               }
-              &:focus,
-              &:active{
+
+              &:hover{
+                svg{
+                  stroke: map-get($theme-colors, 'dark');
+                }
+              }
+
+              &:active,
+              &:focus{
                 @include focused();
               }
             }
           }
 
-          button#user-menu-selector{
-            float: right;
-            background-color: transparent;
-            padding: 0 10px;
-            border: none;
-            position: relative;
-            right: 42px;
-            margin-top: -38px;
-            width: 50px;
-            height: 50px;
-            transition: all ease-in .2s;
 
-            //background-color: map-get($theme-colors, 'primary-darken');
 
-            > svg{
-              @include micro-transition();
-              stroke: map-get($theme-colors, 'background');
-              fill: map-get($theme-colors, 'background');
-              stroke-width: 2px;
-
-              width: 100%;
-            }
-
-            &:hover{
-              svg{
-                stroke: map-get($theme-colors, 'dark');
-              }
-            }
-
-            &:active,
-             &:focus{
-               @include focused();
-             }
-
-            &:before{
-              display: block;
-              position: absolute;
-              content: "";
-              width: 0;
-              height: 120px;
-              left: -39px;
-              margin-top: -44px;
-              border-left: 1px solid map-get($theme-colors, 'primary-darken-5');
-            }
-          }
         }
 
         > .branding-left{
@@ -276,6 +274,25 @@ body{
           }
           details{
             display: none;
+          }
+
+          .controls-container{
+            float: right;
+
+            height: $lg-header-height;
+            > button{
+              border: none;
+              display: block;
+              width: 100%;
+              height: $lg-header-height / 2;
+              color: map-get($theme-colors, 'background');
+              &:first-of-type{
+                background-color: map-get($theme-colors, 'primary-darken-10');
+              }
+              &:last-of-type{
+                background-color: map-get($theme-colors, 'secondary');
+              }
+            }
           }
         }
       }

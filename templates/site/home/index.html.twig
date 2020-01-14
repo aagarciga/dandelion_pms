@@ -37,18 +37,19 @@
 
         <section class="homepage container" data-barba="container" data-barba-namespace="home">
             <header>
-
-
-                <nav class="main-nav" role="navigation">
-                    <a href="#" data-transition="true">{{ "page.name.news" | trans | capitalize }}</a>
-                    <a href="{{ url('site-surroundings') }}" data-transition="true">{{ "page.name.surroundings" | trans | capitalize }}</a>
-                    <a href="{{ url('site-gallery') }}" data-transition="true">{{ "page.name.gallery" | trans | capitalize }}</a>
-                    <a href="{{ url('site-contact-us') }}" data-transition="true">{{ "page.name.contact-us" | trans | capitalize }}</a>
-                </nav>
-
-                <button type="button" id="user-menu-selector">
-                    {% include 'site/svg/_burger-menu.svg.twig' %}
-                </button>
+                <section class="primary">
+                    <nav class="main-nav" role="navigation">
+                        <a href="#" data-transition="true">{{ "page.name.news" | trans | capitalize }}</a>
+                        <a href="{{ url('site-surroundings') }}" data-transition="true">{{ "page.name.surroundings" | trans | capitalize }}</a>
+                        <a href="{{ url('site-gallery') }}" data-transition="true">{{ "page.name.gallery" | trans | capitalize }}</a>
+                        <a href="{{ url('site-contact-us') }}" data-transition="true">{{ "page.name.contact-us" | trans | capitalize }}</a>
+                    </nav>
+                </section>
+                <section class="secondary">
+                    <button type="button" id="user-menu-selector">
+                        {% include 'site/svg/_burger-menu.svg.twig' %}
+                    </button>
+                </section>
             </header>
 
             <div class="branding-left">
@@ -66,15 +67,62 @@
 
                 <div class="slider">
                     <div>
-                        <img src="{{ asset('build/images/standard-double-room.jpg') }}" alt="">
+                        {#                    {% include 'site/_debug-content.html.twig' %}#}
+                        <picture>
+                        <img
+                                sizes="(max-width: 1400px) 100vw, 1400px"
+                                srcset="
+                                {{ asset('build/images/standard-double-room_dz8smo_c_scale,w_200.jpg') }} 200w,
+                                {{ asset('build/images/standard-double-room_dz8smo_c_scale,w_461.jpg') }} 461w,
+                                {{ asset('build/images/standard-double-room_dz8smo_c_scale,w_647.jpg') }} 647w,
+                                {{ asset('build/images/standard-double-room_dz8smo_c_scale,w_816.jpg') }} 816w,
+                                {{ asset('build/images/standard-double-room_dz8smo_c_scale,w_948.jpg') }} 948w,
+                                {{ asset('build/images/standard-double-room_dz8smo_c_scale,w_1095.jpg') }} 1095w,
+                                {{ asset('build/images/standard-double-room_dz8smo_c_scale,w_1211.jpg') }} 1211w,
+                                {{ asset('build/images/standard-double-room_dz8smo_c_scale,w_1333.jpg') }} 1333w,
+                                {{ asset('build/images/standard-double-room_dz8smo_c_scale,w_1400.jpg') }} 1400w"
+                                src="{{ asset('build/images/standard-double-room_dz8smo_c_scale,w_1400.jpg') }}"
+                                alt="Standard double room picture where you can see a queen bed with a flat tv, wood desktop with a white chair, a water kettle over a mini-bar with two glasses and teacups">
+                        </picture>
                     </div>
                     <div>
-                        
+                        <picture>
+                        <img
+                                sizes="(max-width: 1400px) 100vw, 1400px"
+                                srcset="
+                                {{ asset('build/images/standard-double-room-double_zggf6y_c_scale,w_200.jpg') }} 200w,
+                                {{ asset('build/images/standard-double-room-double_zggf6y_c_scale,w_459.jpg') }} 459w,
+                                {{ asset('build/images/standard-double-room-double_zggf6y_c_scale,w_646.jpg') }} 646w,
+                                {{ asset('build/images/standard-double-room-double_zggf6y_c_scale,w_812.jpg') }} 812w,
+                                {{ asset('build/images/standard-double-room-double_zggf6y_c_scale,w_936.jpg') }} 936w,
+                                {{ asset('build/images/standard-double-room-double_zggf6y_c_scale,w_1044.jpg') }} 1044w,
+                                {{ asset('build/images/standard-double-room-double_zggf6y_c_scale,w_1165.jpg') }} 1165w,
+                                {{ asset('build/images/standard-double-room-double_zggf6y_c_scale,w_1278.jpg') }} 1278w,
+                                {{ asset('build/images/standard-double-room-double_zggf6y_c_scale,w_1371.jpg') }} 1371w,
+                                {{ asset('build/images/standard-double-room-double_zggf6y_c_scale,w_1400.jpg') }} 1400w"
+                                src="{{ asset('build/images/standard-double-room-double_zggf6y_c_scale,w_1400.jpg') }}"
+                                alt="">
+                        </picture>
                     </div>
-                    <div>{% include 'site/_debug-content.html.twig' %}</div>
-                </div>
-{#                    {% include 'site/_debug-content.html.twig' %}#}
+                    <div>
+                        <picture>
+                            <img
+                                    sizes="(max-width: 1400px) 100vw, 1400px"
+                                    srcset="
+                                    {{ asset('build/images/standard-triple-room_xsfuky_c_scale,w_200.jpg') }} 200w,
+                                    {{ asset('build/images/standard-triple-room_xsfuky_c_scale,w_504.jpg') }} 504w,
+                                    {{ asset('build/images/standard-triple-room_xsfuky_c_scale,w_701.jpg') }} 701w,
+                                    {{ asset('build/images/standard-triple-room_xsfuky_c_scale,w_901.jpg') }} 901w,
+                                    {{ asset('build/images/standard-triple-room_xsfuky_c_scale,w_1065.jpg') }} 1065w,
+                                    {{ asset('build/images/standard-triple-room_xsfuky_c_scale,w_1196.jpg') }} 1196w,
+                                    {{ asset('build/images/standard-triple-room_xsfuky_c_scale,w_1339.jpg') }} 1339w,
+                                    {{ asset('build/images/standard-triple-room_xsfuky_c_scale,w_1400.jpg') }} 1400w"
+                                    src="{{ asset('build/images/standard-triple-room_xsfuky_c_scale,w_1400.jpg') }}"
+                                    alt="">
+                        </picture>
+                    </div>
 
+                </div>
             </div>
 
             <footer>
@@ -85,10 +133,14 @@
 {#                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque debitis ea eos expedita, ipsum magnam odio tenetur? Delectus, eligendi fugiat fugit magnam maxime neque nobis odio provident quibusdam rerum unde!</p>#}
 {#                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis consequatur cupiditate distinctio dolor illum, incidunt iure labore molestias neque nihil, nisi numquam provident, quam quisquam quod recusandae sequi sit totam.</p>#}
 {#                </details>#}
-                <div class="controls-container">
-                    <button>previous</button>
-                    <button>next</button>
-                </div>
+                <section class="primary"></section>
+                <section class="secondary">
+                    <div class="controls-container">
+                        <button>previous</button>
+                        <button>next</button>
+                    </div>
+                </section>
+
             </footer>
         </section>
     </main>

@@ -70,3 +70,22 @@ but it doesn't hold much data, other than maybe some configuration.
 ```
      php bin/console translation:update --force en
 ```
+- Make Migration
+```
+    php .\bin\console make:migration
+```
+
+- Run Migration
+```
+    php .\bin\console doctrine:migrations:migrate
+```
+
+- Make Fixture
+```
+    php bin/console make:fixtures
+```
+
+- Load Fixtures
+```
+    php .\bin\console doctrine:fixtures:load
+```
