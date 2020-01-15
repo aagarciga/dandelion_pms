@@ -6,11 +6,28 @@
  */
 
 // any CSS you require will output into a single css file (app.css in this case)
-require('../../css/front-office/style.scss');
+import '../../css/front-office/style.scss';
 
-import $ from 'jquery';
+// import $ from 'jquery';
 import 'bootstrap';
+import documentReady from "../site/core/documentReady";
 
-console.log('Hello Webpack Encore! Edit me in assets/js/app.js');
+let frontOffice = function(global){
+
+    let htmlBindings = {
+
+    };
+
+    let init = function(){
+        
+    };
+
+    return {
+        init: init
+    };
+}(window);
 
 
+documentReady(()=> {
+    window.console.log('frontoffice !!!');
+});

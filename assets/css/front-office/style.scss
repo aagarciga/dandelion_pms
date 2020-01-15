@@ -1,6 +1,7 @@
+@import "variables";
 @import "~bootstrap";
 @import "~font-awesome";
 
 body {
-    background-color: lightgray;
+    background-color: $color-baby-powder;
 }

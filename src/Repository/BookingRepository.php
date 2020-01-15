@@ -36,6 +36,42 @@ class BookingRepository extends ServiceEntityRepository
     }
     */
 
+    /**
+     *
+     * @param $start
+     * @param $end
+
+     * @return Booking[] Returns an array of Booking objects
+     */
+    public function findByPeriod($start, $end){
+        return $this->createQueryBuilder('b')
+            ->andWhere('b.checkInAt >= :start')
+            ->andWhere('b.checkOutAt <= :end')
+//            ->andWhere('b.isGuided = :guided')
+            ->setParameters([
+                'start' => $start,
+                'end' => $end
+//                'guided' => $guided
+            ])
+//            ->orderBy('b.id', 'ASC')
+            ->getQuery()
+            ->getResult();
+    }
+
+    public function countPaxPerDay($date, $guided = false){
+        return $this->createQueryBuilder('b')
+            ->select('sum(b.adults)')
+            ->andWhere('b.isGuided = :guided')
+            ->andWhere('b.checkInAt <= :date')
+            ->andWhere('b.checkOutAt >= :date')
+            ->setParameters([
+                'date' => $date,
+                'guided' => $guided
+            ])
+            ->getQuery()
+            ->getSingleScalarResult();
+    }
+
     /*
     public function findOneBySomeField($value): ?Booking
     {

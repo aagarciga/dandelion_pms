@@ -1,0 +1,19 @@
+{% extends 'front-office.html.twig' %}
+
+{% block title %}Hello DefaultController!{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('front-office-guide-service') }}
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="fo-month-calendar" data-booking-source="{{ path('frontoffice_bookings') }}" data-pax-count-per-day-of-period-source="{{ path('frontoffice_pax_count_by_days_of_period') }}" ></div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('front-office-guide-service') }}
+{% endblock %}

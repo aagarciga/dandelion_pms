@@ -31,6 +31,7 @@ Encore
     .addEntry('site', './assets/js/site/main.js')
     .addEntry('front-office', './assets/js/front-office/main.js')
     .addEntry('back-office', './assets/js/back-office/main.js')
+    .addEntry('front-office-guide-service', './assets/js/front-office/guide-service-view.js')
     //.addEntry('page1', './assets/js/page1.js')
     //.addEntry('page2', './assets/js/page2.js')
     // .addStyleEntry('page1', './assets/css/page1.js')
